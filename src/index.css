@@ -1,13 +1,334 @@
-body {
+* {
+  padding: 0;
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system,  'Helvetica Neue';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: s-apple-system,  'Helvetica Neue',
     monospace;
+}
+
+.App{
+  max-width: 1230px;
+  width: 100%;
+  margin: auto;
+  box-shadow: 0 0.2rem 0.4rem rgb(0, 0, 0, 0.5);
+  padding: 0 15px;
+}
+
+header{
+  width: 100%;
+  min-height: 100px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+a{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #555;
+  letter-spacing: 2px;
+}
+a:hover{
+  color: aquamarine;
+  border-radius: 5rem;
+  border: 2rem;
+}
+ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 0 1rem;
+
+}
+.menu{
+  display: none;
+  
+}
+.menuul{
+  color: rgb(3, 3, 3);
+  font-size: 20px;
+  
+
+}
+.cartico{
+  position: relative;
+  margin-right: 1rem;
+  margin-top: 10px;
+}
+.cartico span{
+  background: rgb(20, 23, 220, 0.8);
+   border-radius: 10rem; 
+   border: 2rem;
+  color: white;
+  
+  
+  position: absolute;
+  top:-10px;
+  right: -10px;
+  font-size: 10px;
+  padding: 5px;
+}
+.cartico:hover{opacity: 1;
+  border-radius: 5rem;
+background: aquamarine;}
+
+
+.products{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+.products .card{
+  max-width: 370px;
+  width: 50%;
+  overflow: hidden;
+  height: 570px;
+  box-shadow: 0 0 5px rgb(202, 218, 226);
+  border-radius: 0.5rem;
+  padding: 10px;
+  margin: 1rem;
+  cursor: pointer;
+}
+.addto{
+  margin-bottom: 2rem;
+  
+}
+.card img{
+  width: 100%;
+  height: 100%;
+  max-height: 340px;
+  display: block;
+  object-fit: cover;
+  opacity: 0.9;
+}
+.card .box{
+  margin: 15px 0;
+}
+.card .box h3{
+  text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.card .box p{
+  margin: 10px 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  height: 70px;
+}
+
+.card .box button{
+  width: 100%;
+  border: 0.5em;
+  border-radius: 5rem;
+
+  outline: none;
+  background: rgb(119, 98, 98);
+  color: white;
+  text-align: center;
+  max-width:50vh;
+  padding: 10px 0;
+  margin-top: 0.5rem;
+  cursor: pointer;
+
+}
+
+.details{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  padding: 5rem;
+  
+  text-align: center;
+}
+.details .imgcard{
+  max-width: 400px;
+  width: 100%;
+  margin: 20px;
+  height: 450px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.details .imgcard:hover{
+  background-size: 150%;
+  border: 1px solid #ddd;
+  cursor: zoom-in;
+}
+
+.boxcard{
+  max-width: 500px;
+  width: 100%;
+  margin: 20px;
+}
+.boxcard h3{
+  text-transform: uppercase;
+  color: darkblue;
+  letter-spacing: 2px;
+  text-align: center;
+   /* font-size: 120%; */
+}
+.boxcard button,
+.boxcard .cart{
+  border: 1px solid #555;
+  
+  outline: none;
+  background: #333;
+  cursor: pointer;
+  color: white;
+  margin-right: 5px;
+  margin-top: 10px;
+  
+}
+.colors button,
+.sizes button{
+  width: 35px;
+  height: 35px;
+  
+}
+.smegol{
+  background-color: aqua;
+}
+.home{
+  background-color: aquamarine;
+}
+.boxcard p{
+  line-height: 1.5;
+  margin: 10px 0;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.empty{
+  text-align: center;
+   padding: 5rem;
+}
+.boxcard {
+
+  cursor: pointer;
+}
+.card img{object-fit:contain; }
+.boxcard  img{
+  width: 3vh;
+  height: 45px;
+  display: block;
+  /* object-fit: cover; */
+  margin: 20px;
+  overflow: hidden;
+}
+.boxcard .cart{
+  padding: 10px 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+}
+@media (max-width: 700px){
+
+  ul{
+    position: fixed;
+    top:0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 0.98;
+    z-index: 99;
+    transition: 0.5s ease-in;
+  }
+  .menu{
+    display: block;
+    cursor: pointer;
+  }
+  ul li .menu{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 500px){
+  .details{
+    padding: 0;
+  }
+  .boxcard  img{
+    width: 1rem;
+    ;
+  }
+  .details .imgcard{
+    height: 200px;
+  }
+}
+
+.Price {
+  color: rgb(24, 10, 224);
+  z-index: 5;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+
+.cart{
+  position: relative;
+  border: 1px solid #ccc;
+  
+}
+.amount span{
+ 
+  padding: 0 20px;
+}
+.amount .count{
+  width: 40px;
+  height: 30px;
+  border: 1px solid #555;
+  outline: none;
+  background: #555;
+  cursor: pointer;
+}
+.delete{
+  position: absolute;
+  top:2em;
+  right: 1em;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  font-size: smaller;
+  background-color: rgba(255, 255, 255, 0.932) ;
+  border-radius: 5rem;
+  border-color: darkblue;
+  border: 5px;
+}
+.total{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+}
+.total a{
+  background: #333;
+  color: white;
+  padding: 10px 25px
+}
+.total h3{
+  margin-right: 50px;
+
 }
