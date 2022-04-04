@@ -57,7 +57,7 @@ export default function Cart() {
                cart.map(product =>(
                    <div className="details cart" key={product.id}>
                        <div className="imgcard" 
-                       style={{backgroundImage: `url(${product.images[0]})`}} />
+                       style={{backgroundImage: `url(${product.image})`}} />
 
                        <div className="boxcard">
                            <h3 title={product.title}>{product.title}</h3>

@@ -58,6 +58,16 @@ ul li{
   
 
 }
+.logout:hover{
+  color: aquamarine;
+  border-radius: 5rem;
+  border: 2rem;
+
+}
+.logout{text-decoration: none;
+  text-transform: uppercase;
+  color: #555;
+  letter-spacing: 2px;}
 .cartico{
   position: relative;
   margin-right: 1rem;

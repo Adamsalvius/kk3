@@ -1,13 +1,25 @@
 import React, {useState, useContext} from 'react'
 import Menu from './svg/bars-solid.png'
 import Cart from './svg/cart.svg'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import {DataContext} from './Data'
+import { useResetRecoilState, useRecoilValue } from 'recoil'
+import authState from '../stores/auth/atom'
+
+
+
 
 export default function Header() {
+    const resetAuth = useResetRecoilState(authState);
     const [menu, setMenu] = useState(false)
+    const auth = useRecoilValue(authState);
     const value = useContext(DataContext)
     const [cart] = value.cart
+    const navigate = useNavigate();
+    const handleSignInOut = () => {
+		if (auth.token) resetAuth();
+		navigate("/login");
+	};
 
     const toggleMenu = () =>{
         setMenu(!menu)
@@ -29,7 +41,12 @@ export default function Header() {
             <ul className="menuul"style={styleMenu}>
                 <li><Link to="/Home">Home</Link></li>
                 <li><Link to="/products">Products</Link></li>
-                <li><Link to="/">About</Link></li>
+                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/profile">Profile</Link></li>
+                <li><Link to="/Register">Register</Link></li>
+                <li><div className='logout' onClick={() => {
+									handleSignInOut();
+								}}>LOGOUT</div></li>
                 <li onClick={toggleMenu}>
                     <p className="menu x" >X</p>
                 </li>

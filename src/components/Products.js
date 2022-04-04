@@ -13,7 +13,7 @@ export default function Products() {
                 products.map(product =>(
                     <div className="card" key={product.id}>
                         <Link to={`/products/${product.id}`}>
-                            <img src={product.images[0]} alt=""/>
+                            <img src={product.image} alt=""/>
                         </Link>
                         <div className="box">
                         <h3 title={product.title}>
